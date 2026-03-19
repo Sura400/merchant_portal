@@ -1,0 +1,50 @@
+﻿{% extends "base.html" %}
+{% block title %}Merchant Reports{% endblock %}
+{% block content %}
+<div class="main-content">
+  <h1>Merchant Reports</h1>
+
+  <!-- Merchants -->
+  <h2>Registered Merchants</h2>
+  <table>
+    <tr><th>ID</th><th>Name</th><th>Business</th><th>Status</th></tr>
+    {% for m in merchants %}
+    <tr>
+      <td>{{ m.id }}</td>
+      <td>{{ m.first_name }} {{ m.last_name }}</td>
+      <td>{{ m.business_name }}</td>
+      <td>{{ m.status }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <!-- Transactions -->
+  <h2>Transactions</h2>
+  <table>
+    <tr><th>ID</th><th>Merchant</th><th>Amount</th><th>Description</th><th>Date</th></tr>
+    {% for t in transactions %}
+    <tr>
+      <td>{{ t.id }}</td>
+      <td>{{ t.merchant_id }}</td>
+      <td>{{ t.amount }}</td>
+      <td>{{ t.description }}</td>
+      <td>{{ t.date }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <!-- QR Code Reports -->
+  <h2>QR Code Generation</h2>
+  <table>
+    <tr><th>ID</th><th>Merchant</th><th>QR Code</th><th>Date Generated</th></tr>
+    {% for q in qr_reports %}
+    <tr>
+      <td>{{ q.id }}</td>
+      <td>{{ q.merchant_id }}</td>
+      <td>{{ q.code_value }}</td>
+      <td>{{ q.generated_at }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

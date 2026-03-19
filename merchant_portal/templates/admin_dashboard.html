@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<div class="main-content">
+
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <img src="{{ url_for('static', filename='gadaa_logo.png') }}" alt="Gadaa Bank Logo" class="logo">
+    <h1 class="dashboard-title">Admin Dashboard</h1>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="{{ url_for('admin_home') }}">Home</a></li>
+      <li><a href="{{ url_for('admin_dashboard') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('admin_add_user') }}">Add User</a></li>
+      <li><a href="{{ url_for('admin_reports') }}">Reports</a></li>
+      <li><a href="{{ url_for('admin_audit') }}">Audit Logs</a></li>
+      <li><a href="{{ url_for('services') }}">Services</a></li>
+      <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content-area">
+    <h2>System Overview</h2>
+
+    <!-- Users -->
+    <div class="card">
+      <h3>Users</h3>
+      <table>
+        <tr><th>Email</th><th>Name</th><th>Role</th><th>Status</th><th>Phone</th><th>Actions</th></tr>
+        {% for email, u in users.items() %}
+        <tr>
+          <td>{{ email }}</td>
+          <td>{{ u.first_name }} {{ u.middle_name }} {{ u.last_name }}</td>
+          <td>{{ u.role }}</td>
+          <td>{{ u.status }}</td>
+          <td>{{ u.phone_number }}</td>
+          <td><a href="{{ url_for('admin_edit_user', email=email) }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <!-- Audit Logs -->
+    <div class="card">
+      <h3>Audit Logs</h3>
+      <table>
+        <tr><th>User</th><th>Action</th><th>Time</th></tr>
+        {% for log in audit_logs %}
+        <tr>
+          <td>{{ log.user }}</td>
+          <td>{{ log.action }}</td>
+          <td>{{ log.time }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

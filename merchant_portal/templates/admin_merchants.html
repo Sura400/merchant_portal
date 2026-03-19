@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Merchant Management</h2>
+  <a href="/admin/add_merchant" class="btn">Add Merchant</a>
+  <table class="gadaa-table">
+    <tr><th>ID</th><th>Name</th><th>Status</th><th>Expiry</th><th>Documents</th><th>Actions</th></tr>
+    {% for m in merchants %}
+      <tr>
+        <td>{{ m.id }}</td>
+        <td>{{ m.business_name }}</td>
+        <td>{{ m.status }}</td>
+        <td>{{ m.expiry_date }}</td>
+        <td>{{ m.documents|join(', ') }}</td>
+        <td>
+          <a class="btn" href="/admin/edit_merchant/{{ m.id }}">Edit</a>
+          <a class="btn-danger" href="/admin/freeze_merchant/{{ m.id }}">Freeze</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

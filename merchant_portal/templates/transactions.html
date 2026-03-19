@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Transactions - Gadaa Portal{% endblock %}
+
+{% block content %}
+    <h2>Record Transaction</h2>
+    <form method="post" action="/transactions">
+        <label>Merchant:</label>
+        <select name="merchant_id" required>
+            {% for merchant in merchants %}
+                <option value="{{ merchant.id }}">{{ merchant.name }} ({{ merchant.id }})</option>
+            {% endfor %}
+        </select><br>
+        <label>Amount:</label><input type="number" name="amount" step="0.01" required><br>
+        <label>Date:</label><input type="date" name="date" required><br>
+        <label>Description:</label><input type="text" name="description"><br>
+        <button type="submit">Save Transaction</button>
+    </form>
+
+    <h2>Transaction List</h2>
+    {% if transactions %}
+        <table>
+            <tr><th>ID</th><th>Merchant ID</th><th>Amount</th><th>Date</th><th>Description</th></tr>
+            {% for tx in transactions %}
+            <tr>
+                <td>{{ tx.id }}</td>
+                <td>{{ tx.merchant_id }}</td>
+                <td>{{ tx.amount }}</td>
+                <td>{{ tx.date }}</td>
+                <td>{{ tx.description }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No transactions recorded yet.</p>
+    {% endif %}
+{% endblock %}

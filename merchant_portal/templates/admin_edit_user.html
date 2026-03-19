@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Edit User</h2>
+  <form method="POST" class="gadaa-form">
+    <label>Email:</label><input type="email" value="{{ email }}" disabled><br>
+    <label>Role:</label>
+    <select name="role">
+      <option value="admin" {% if user.role=="admin" %}selected{% endif %}>Admin</option>
+      <option value="ops" {% if user.role=="ops" %}selected{% endif %}>Ops</option>
+      <option value="merchant" {% if user.role=="merchant" %}selected{% endif %}>Merchant</option>
+      <option value="auditor" {% if user.role=="auditor" %}selected{% endif %}>Auditor</option>
+    </select><br>
+    <label>Status:</label>
+    <select name="status">
+      <option value="active" {% if user.status=="active" %}selected{% endif %}>Active</option>
+      <option value="suspended" {% if user.status=="suspended" %}selected{% endif %}>Suspended</option>
+      <option value="deleted" {% if user.status=="deleted" %}selected{% endif %}>Deleted</option>
+    </select><br>
+    <button type="submit" class="btn">Update</button>
+  </form>
+{% endblock %}

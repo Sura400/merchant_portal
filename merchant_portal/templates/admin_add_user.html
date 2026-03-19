@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Add New User</h2>
+  <form method="POST">
+    <label>Email:</label>
+    <input type="email" name="email" required><br>
+
+    <label>Password:</label>
+    <input type="password" name="password" required><br>
+
+    <label>Role:</label>
+    <select name="role" required>
+      <option value="admin">Admin</option>
+      <option value="ops">Ops</option>
+      <option value="merchant">Merchant</option>
+    </select><br>
+
+    <label>Status:</label>
+    <select name="status">
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select><br>
+
+    <!-- New fields -->
+    <label>First Name:</label>
+    <input type="text" name="first_name" required><br>
+
+    <label>Middle Name:</label>
+    <input type="text" name="middle_name"><br>
+
+    <label>Last Name:</label>
+    <input type="text" name="last_name" required><br>
+
+    <label>Phone Number:</label>
+    <input type="tel" name="phone_number" required><br>
+
+    <label>Branch:</label>
+    <input type="text" name="branch" required><br>
+
+    <button type="submit" class="btn">Add User</button>
+  </form>
+{% endblock %}

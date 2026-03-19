@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Login - Gadaa Bank{% endblock %}
+{% block content %}
+<div class="login-container">
+  <div class="login-card">
+    <img src="{{ url_for('static', filename='gadaa_logo.png') }}" alt="Gadaa Bank Logo" class="login-logo">
+    <h2>Secure Merchant & Agent Banking Portal</h2>
+
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+      <label for="email">Email</label>
+      <input type="text" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" required>
+
+      <button type="submit" class="btn-login">Login</button>
+    </form>
+
+    <a href="#" class="forgot-password">Forgot Password?</a>
+  </div>
+  <footer class="login-footer">
+    © Gadaa Bank – Secure Digital Banking
+  </footer>
+</div>
+{% endblock %}

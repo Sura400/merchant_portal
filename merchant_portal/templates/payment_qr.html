@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Payment QR - Gadaa Portal{% endblock %}
+
+{% block content %}
+    <h2>Payment QR Generated</h2>
+    <img src="{{ url_for('static', filename=qr_file) }}" alt="Payment QR">
+    <h3>Embedded XML Payload</h3>
+    <pre>{{ xml_payload }}</pre>
+{% endblock %}

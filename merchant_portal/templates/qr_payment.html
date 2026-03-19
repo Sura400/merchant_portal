@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}QR Payment - Gadaa Portal{% endblock %}
+
+{% block content %}
+    <h2>QR Payment Received</h2>
+    <table>
+        <tr><th>Transaction ID</th><td>{{ tx_id }}</td></tr>
+        <tr><th>Amount</th><td>{{ amount }}</td></tr>
+        <tr><th>Debtor</th><td>{{ debtor }}</td></tr>
+        <tr><th>Creditor</th><td>{{ creditor }}</td></tr>
+    </table>
+    <p>This QR payment has been recorded in the transaction list.</p>
+{% endblock %}

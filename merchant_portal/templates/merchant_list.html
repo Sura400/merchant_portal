@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Merchant List - Gadaa Bank</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 class="brand-name">Gadaa Bank</h2>
+    <ul class="menu">
+      <li><a href="{{ url_for('merchant_dashboard') }}"><i class="fa fa-home"></i> Dashboard</a></li>
+      <li><a href="{{ url_for('merchant_register') }}"><i class="fa fa-user-plus"></i> Register Merchant</a></li>
+      <li><a href="{{ url_for('merchant_list') }}"><i class="fa fa-list"></i> Merchant List</a></li>
+      <li><a href="{{ url_for('merchant_reports') }}"><i class="fa fa-chart-line"></i> Reports</a></li>
+      <li><a href="{{ url_for('generate_qr') }}"><i class="fa fa-qrcode"></i> Generate QR</a></li>
+      <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h2>Merchant List</h2>
+    <div class="card">
+      <table class="registry-table">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Business</th>
+          <th>Account</th>
+          <th>Status</th>
+          <th>Phone</th>
+          <th>Email</th>
+        </tr>
+        {% for m in merchants %}
+        <tr>
+          <td>{{ m.id }}</td>
+          <td>{{ m.first_name }} {{ m.middle_name }} {{ m.last_name }}</td>
+          <td>{{ m.business_name }}</td>
+          <td>{{ m.account_number }}</td>
+          <td>{{ m.status }}</td>
+          <td>{{ m.phone_number }}</td>
+          <td>{{ m.email }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</body>
+</html>

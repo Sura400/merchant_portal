@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Merchant Dashboard - Gadaa Bank{% endblock %}
+{% block content %}
+  <!-- Welcome Message -->
+  <div class="welcome-banner">
+    <h1>Welcome to Merchant Dashboard</h1>
+    <p>Manage merchants, view reports, and generate QR codes with ease.</p>
+  </div>
+
+  <!-- KPI Cards -->
+  <div class="card-container">
+    <div class="card shaded-red"><h3>Total Merchants</h3><p>{{ merchants|length }}</p></div>
+    <div class="card shaded-red"><h3>Total Transactions</h3><p>{{ transactions|length }}</p></div>
+  </div>
+{% endblock %}

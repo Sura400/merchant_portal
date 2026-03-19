@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Edit Merchant</h2>
+  <form method="POST" class="gadaa-form">
+    <label>Business Name:</label><input type="text" name="business_name" value="{{ merchant.business_name }}"><br>
+    <label>Address:</label><input type="text" name="address" value="{{ merchant.address }}"><br>
+    <label>Contact:</label><input type="text" name="contact" value="{{ merchant.contact }}"><br>
+    <label>Email:</label><input type="email" name="email" value="{{ merchant.email }}"><br>
+    <label>Account Number:</label><input type="text" name="account_number" value="{{ merchant.account_number }}"><br>
+    <label>Status:</label><input type="text" name="status" value="{{ merchant.status }}"><br>
+    <label>Expiry Date:</label><input type="date" name="expiry_date" value="{{ merchant.expiry_date }}"><br>
+    <button type="submit" class="btn">Update</button>
+  </form>
+{% endblock %}

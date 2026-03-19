@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Generate Payment QR{% endblock %}
+
+{% block content %}
+    <h2>Generate Payment QR for {{ merchant.first_name }} {{ merchant.last_name }}</h2>
+    <form method="post">
+        <label>Amount (ETB):</label>
+        <input type="number" name="amount" step="0.01" required><br>
+        <label>Invoice Reference:</label>
+        <input type="text" name="invoice"><br>
+        <button type="submit">Generate QR</button>
+    </form>
+{% endblock %}

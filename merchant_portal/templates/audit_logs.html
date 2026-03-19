@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Audit Logs</h2>
+  <table class="gadaa-table">
+    <tr><th>User</th><th>Action</th><th>Time</th></tr>
+    {% for log in audit_logs %}
+      <tr>
+        <td>{{ log.user }}</td>
+        <td>{{ log.action }}</td>
+        <td>{{ log.time }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

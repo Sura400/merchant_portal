@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>System Users</h2>
+  <table border="1" cellpadding="6" cellspacing="0" style="width:100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Branch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for email, user in users.items() %}
+      <tr>
+        <td>{{ email }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.status }}</td>
+        <td>{{ user.first_name or '' }}</td>
+        <td>{{ user.middle_name or '' }}</td>
+        <td>{{ user.last_name or '' }}</td>
+        <td>{{ user.phone_number or '' }}</td>
+        <td>{{ user.branch or '' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Merchant - Gadaa Bank</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 class="brand-name">Gadaa Bank</h2>
+    <ul class="menu">
+      <li><a href="{{ url_for('merchant_dashboard') }}"><i class="fa fa-home"></i> Dashboard</a></li>
+      <li><a href="{{ url_for('merchant_register') }}"><i class="fa fa-user-plus"></i> Register Merchant</a></li>
+      <li><a href="{{ url_for('merchant_list') }}"><i class="fa fa-list"></i> Merchant List</a></li>
+      <li><a href="{{ url_for('merchant_reports') }}"><i class="fa fa-chart-line"></i> Reports</a></li>
+      <li><a href="{{ url_for('generate_qr') }}"><i class="fa fa-qrcode"></i> Generate QR</a></li>
+      <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h2>Register Merchant</h2>
+    <div class="card">
+      <form method="POST" enctype="multipart/form-data">
+
+        <!-- Auto-generated Merchant ID -->
+        <label>Merchant ID (Auto-generated):</label>
+        <input type="text" name="merchant_id" value="{{ merchants|length + 10001 }}" readonly>
+
+        <!-- Personal Info -->
+        <h3>Personal Information</h3>
+        <label>First Name *:</label><input type="text" name="first_name" required>
+        <label>Middle Name:</label><input type="text" name="middle_name">
+        <label>Last Name *:</label><input type="text" name="last_name" required>
+        <label>National ID *:</label><input type="text" name="national_id" required>
+        <label>ID Issue Date *:</label><input type="date" name="id_issue_date" required>
+        <label>ID Expiry Date *:</label><input type="date" name="id_expiry_date" required>
+        <label>Full Address *:</label><input type="text" name="full_address" required>
+        <label>Phone Number *:</label>
+        <input type="tel" name="phone_number" required pattern="[0-9]{9,15}" title="Enter a valid phone number">
+
+        <!-- Business Info -->
+        <h3>Business Information</h3>
+        <label>Business Type *:</label><input type="text" name="business_type" required>
+        <label>Business Name *:</label><input type="text" name="business_name" required>
+        <label>Account Number *:</label>
+        <input type="text" name="account_number" required pattern="[0-9]{6,20}" title="Enter a valid account number">
+        <label>TIN Number *:</label><input type="text" name="tin_number" required>
+
+        <!-- Documents -->
+        <h3>Documents</h3>
+        <label>License Document:</label><input type="file" name="license">
+
+        <!-- Submit -->
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

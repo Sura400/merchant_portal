@@ -1,0 +1,244 @@
+<FPEnvelope xmlns="urn:iso:std:iso:20022:tech:xsd:payment_request" xmlns:document="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10" xmlns:header="urn:iso:std:iso:20022:tech:xsd:head.001.001.03">
+<header:AppHdr>
+<header:Fr>
+<header:FIId>
+<header:FinInstnId>
+<header:Othr>
+<header:Id>CBETETAAXXX</header:Id>
+</header:Othr>
+</header:FinInstnId>
+</header:FIId>
+</header:Fr>
+<header:To>
+<header:FIId>
+<header:FinInstnId>
+<header:Othr>
+<header:Id>FP</header:Id>
+</header:Othr>
+</header:FinInstnId>
+</header:FIId>
+</header:To>
+<header:BizMsgIdr>CBETETAAXXX2024051305293407300000</header:BizMsgIdr>
+<header:MsgDefIdr>pacs.008.001.10</header:MsgDefIdr>
+<header:CreDt>2023-07-25T00:00:00.000Z</header:CreDt>
+<document:Sgntr xmlns:document="urn:iso:std:iso:20022:tech:xsd:head.001.001.03">
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference URI="#_37518fb5-1898-4da3-bdea-ddffc1bbbf9b">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>YUvtWEIGmxN8YH26oTroD6lmKTPIriOLRBTdEKdgj44=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://uri.etsi.org/01903/v1.3.2#SignedProperties" URI="#_adad5700-5ccc-48ab-a929-532120c1c504-signedprops">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>/xKgkA0ppmIDT5AkKCJjuhl4u+om58mFEdbaQlcvOC0=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference>
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>QwfRjlxyjK8JkPqRtgUcofBo/i5CSh1ZHdvDXw89yHY=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>ewO3Z6X81svUDClk+TrAV5lbY2WBpJzAaWBI1ZVVo/rxk9vlvA0kjq3MXLQPr8Yx+C4lKBJddp2ndPAuv8wkwZkOSsPxLzOmB/ZJktHSFig6pq9eKdmAPBWnSrKCK5lC9MWD49B+kRNO2hZSW2qsx9hrid7KAX6JcGecz4voMM93iBhzn1fp9IKLycASQyk4OR5sPoDBUnCY5w1py3iHkon6fMA4d70sQUnqNw6drUXeXPfpD494otvrmWz+lyTomLv7PV/idU7/3AJInnD6sEclu0AX3tRU4EjLzUetU3cXRQkGx4BpWuYMOEB9fIKmrwmPnQllqmEMvp5sVgMFFg==</ds:SignatureValue>
+<ds:KeyInfo Id="_37518fb5-1898-4da3-bdea-ddffc1bbbf9b">
+<ds:X509Data>
+<ds:X509IssuerSerial>
+<ds:X509IssuerName>CN=TEST ETS IPS Issuing CA, O=EthSwitch, C=ET</ds:X509IssuerName>
+<ds:X509SerialNumber>423714158842744355552720259575245055968935949</ds:X509SerialNumber>
+</ds:X509IssuerSerial>
+</ds:X509Data>
+</ds:KeyInfo>
+<ds:Object>
+<xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#">
+<xades:SignedProperties Id="_adad5700-5ccc-48ab-a929-532120c1c504-signedprops">
+<xades:SignedSignatureProperties>
+<xades:SigningTime>2024-05-13T11:30:07Z</xades:SigningTime>
+</xades:SignedSignatureProperties>
+</xades:SignedProperties>
+</xades:QualifyingProperties>
+</ds:Object>
+</ds:Signature>
+</document:Sgntr>
+</header:AppHdr>
+<document:Document>
+<document:FIToFICstmrCdtTrf>
+<document:GrpHdr>
+<document:MsgId>CBETETAAXXX2024051305293407400000</document:MsgId>
+<document:CreDtTm>2023-07-25T00:00:00.000+03:00</document:CreDtTm>
+<document:NbOfTxs>1</document:NbOfTxs>
+<document:SttlmInf>
+<document:SttlmMtd>CLRG</document:SttlmMtd>
+<document:ClrSys>
+<document:Prtry>FP</document:Prtry>
+</document:ClrSys>
+</document:SttlmInf>
+<document:InstgAgt>
+<document:FinInstnId>
+<document:Othr>
+<document:Id>CBETETAAXXX</document:Id>
+</document:Othr>
+</document:FinInstnId>
+</document:InstgAgt>
+<document:InstdAgt>
+<document:FinInstnId>
+<document:Othr>
+<document:Id>ETSETAAXX</document:Id>
+</document:Othr>
+</document:FinInstnId>
+</document:InstdAgt>
+</document:GrpHdr>
+<document:CdtTrfTxInf>
+<document:PmtId>
+<document:EndToEndId>-</document:EndToEndId>
+<document:TxId>CBETETAAXXX9973337877694</document:TxId>
+</document:PmtId>
+<document:PmtTpInf>
+<document:LclInstrm>
+<document:Prtry>CRTRM</document:Prtry>
+</document:LclInstrm>
+<document:CtgyPurp>
+<document:Prtry>C2BSQR</document:Prtry>
+</document:CtgyPurp>
+</document:PmtTpInf>
+<document:IntrBkSttlmAmt Ccy="ETB">1</document:IntrBkSttlmAmt>
+<document:AccptncDtTm>2023-07-25T17:42:39.071+06:00</document:AccptncDtTm>
+<document:InstdAmt Ccy="ETB">1</document:InstdAmt>
+<document:ChrgBr>SLEV</document:ChrgBr>
+<document:UltmtDbtr>
+<document:Nm>Biogenetics - CROPS</document:Nm>
+<document:PstlAdr>
+<document:StrtNm>Growth Street</document:StrtNm>
+<document:BldgNb>17</document:BldgNb>
+<document:PstCd>G5 OTW</document:PstCd>
+<document:TwnNm>Glasgow</document:TwnNm>
+<document:Ctry>GB</document:Ctry>
+</document:PstlAdr>
+</document:UltmtDbtr>
+<document:Dbtr>
+<document:Nm>MSCWT</document:Nm>
+<document:PstlAdr>
+<document:StrtNm>Growth Street</document:StrtNm>
+<document:AdrLine>Bishkek</document:AdrLine>
+</document:PstlAdr>
+<document:Id>
+<document:PrvtId>
+<document:Othr>
+<document:Id>MOBN</document:Id>
+<document:SchmeNm>
+<document:Prtry>LPNB</document:Prtry>
+</document:SchmeNm>
+</document:Othr>
+</document:PrvtId>
+</document:Id>
+<document:CtctDtls>
+<document:MobNb>+996-554542</document:MobNb>
+<document:EmailAdr>emirkgz@gmail.com</document:EmailAdr>
+</document:CtctDtls>
+</document:Dbtr>
+<document:DbtrAcct>
+<document:Id>
+<document:Othr>
+<document:Id>1234567890</document:Id>
+<document:SchmeNm>
+<document:Prtry>ACCT</document:Prtry>
+</document:SchmeNm>
+<document:Issr>C</document:Issr>
+</document:Othr>
+</document:Id>
+</document:DbtrAcct>
+<document:DbtrAgt>
+<document:FinInstnId>
+<document:Othr>
+<document:Id>CBETETAAXXX</document:Id>
+<document:Issr>ATM</document:Issr>
+</document:Othr>
+</document:FinInstnId>
+</document:DbtrAgt>
+<document:CdtrAgt>
+<document:FinInstnId>
+<document:Othr>
+<document:Id>ETSETAAXX</document:Id>
+</document:Othr>
+</document:FinInstnId>
+</document:CdtrAgt>
+<document:Cdtr>
+<document:Nm>test</document:Nm>
+<document:PstlAdr>
+<document:StrtNm>Growth Street</document:StrtNm>
+<document:BldgNb>17</document:BldgNb>
+<document:PstCd>G5 OTW</document:PstCd>
+<document:TwnNm>Glasgow</document:TwnNm>
+<document:Ctry>GB</document:Ctry>
+<document:AdrLine>Corn Exchange 5th Floor</document:AdrLine>
+</document:PstlAdr>
+<document:CtryOfRes>ET</document:CtryOfRes>
+<document:CtctDtls>
+<document:Nm>MerchantName</document:Nm>
+<document:Dept>MerchantLabel</document:Dept>
+<document:Othr>
+<document:ChanlTp>QRCP</document:ChanlTp>
+<document:Id>QRCPS</document:Id>
+</document:Othr>
+</document:CtctDtls>
+</document:Cdtr>
+<document:CdtrAcct>
+<document:Id>
+<document:Othr>
+<document:Id>1234567890</document:Id>
+<document:SchmeNm>
+<document:Prtry>ACCT</document:Prtry>
+</document:SchmeNm>
+</document:Othr>
+</document:Id>
+</document:CdtrAcct>
+<document:UltmtCdtr>
+<document:Id>
+<document:PrvtId>
+<document:Othr>
+<document:Id>MOBN</document:Id>
+<document:SchmeNm>
+<document:Prtry>MOBN</document:Prtry>
+</document:SchmeNm>
+</document:Othr>
+</document:PrvtId>
+</document:Id>
+</document:UltmtCdtr>
+<document:InstrForNxtAgt>
+<document:InstrInf>InstrInf</document:InstrInf>
+</document:InstrForNxtAgt>
+<document:Purp>
+<document:Prtry>GOVTP</document:Prtry>
+</document:Purp>
+<document:Tax>
+<document:Cdtr>
+<document:TaxId>123456789</document:TaxId>
+</document:Cdtr>
+</document:Tax>
+<document:RmtInf>
+<document:Ustrd>Merchant Payment</document:Ustrd>
+<document:Ustrd>JD01234</document:Ustrd>
+<document:Ustrd>5251</document:Ustrd>
+<document:Strd>
+<document:RfrdDocInf>
+<document:Tp>
+<document:CdOrPrtry>
+<document:Prtry>123456789</document:Prtry>
+</document:CdOrPrtry>
+</document:Tp>
+<document:Nb>NbInvoiceNumber</document:Nb>
+</document:RfrdDocInf>
+</document:Strd>
+</document:RmtInf>
+</document:CdtTrfTxInf>
+</document:FIToFICstmrCdtTrf>
+</document:Document>
+</FPEnvelope>
